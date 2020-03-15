@@ -263,7 +263,7 @@ COMMAND_ARGS ArticleAdmin::url_to_openarg( const std::string& url, const bool ta
         command_arg.arg2 = "false"; // command.url を開いてるかチェックする
         if( lock ) command_arg.arg3 = "lock";
 
-        command_arg.arg4 = "HIGHRESREF";
+        command_arg.arg4 = "HIGHREFRES";
     }
 
     // URL抽出
@@ -394,7 +394,7 @@ std::string ArticleAdmin::command_to_url( const COMMAND_ARGS& command )
 
     if( command.arg4 == "POST" ) return command.url + ARTICLE_SIGN + POST_SIGN;
 
-    if( command.arg4 == "HIGHRESREF" ) return command.url + ARTICLE_SIGN + HIGHREFRES_SIGN;
+    if( command.arg4 == "HIGHREFRES" ) return command.url + ARTICLE_SIGN + HIGHREFRES_SIGN;
 
     if( command.arg4 == "URL" ) return command.url + ARTICLE_SIGN + URL_SIGN;
 
@@ -520,7 +520,7 @@ SKELETON::View* ArticleAdmin::create_view( const COMMAND_ARGS& command )
     }
 
     // 高参照レス抽出ビュー
-    else if( command.arg4 == "HIGHRESREF" ){
+    else if( command.arg4 == "HIGHREFRES" ){
         type = CORE::VIEW_ARTICLEHIGHREFRES;
     }
 

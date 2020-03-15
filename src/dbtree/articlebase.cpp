@@ -287,6 +287,19 @@ std::list< int > ArticleBase::get_res_posted()
     return list_resnum;
 }
 
+// 高参照レスをリストにして取得
+std::list< int > ArticleBase::get_highly_referenced_res()
+{
+    std::list< int > list_resnum;
+#if 0
+    // 後で実装
+    for( int i = 1; i <= m_number_load ; ++i ){
+        if( is_posted( i ) ) list_resnum.push_back( i );
+    }
+#endif
+
+    return list_resnum;
+}
 
 //
 // number番のレスを参照しているレス番号をリストにして取得
